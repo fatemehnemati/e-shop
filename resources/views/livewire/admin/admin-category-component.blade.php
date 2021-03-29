@@ -17,7 +17,7 @@
                             All Categories
                         </div>
                         <div class="col-md-6">
-                            {{-- <a href="{{ route('admin.addcategories') }}" class="btn pull-right" style="color:white; background:red;">Add New</a> --}}
+                            <a href="{{ route('admin.addcategories') }}" class="btn btn-danger pull-right text-center">Add New</a>
                         </div>
                     </div>
                 </div>
