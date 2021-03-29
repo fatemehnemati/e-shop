@@ -81,7 +81,10 @@
                                                     <a title="Dashboard" href="{{ Route('admin.dashboard') }}">Dashboard</a>
 												</li>
 												<li class="menu-item" >
-                                                    <a title="categories" href="{{ route('admin.categories') }}">category</a>
+                                                    <a title="categories" href="{{ route('admin.categories') }}">categories</a>
+												</li>
+												<li class="menu-item" >
+                                                    <a title="products" href="{{ route('admin.products') }}">products</a>
                                                 </li>
                                                 <li class="menu-item" >
                                                     <a title="Dashboard" href="{{ Route('admin.dashboard') }}" onclick="event.preventDefault() ;  document.getElementById('logout-form').submit();">logout</a>
