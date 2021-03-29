@@ -7,6 +7,7 @@ use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CheckoutComponent;
 use \App\Http\Livewire\User\UserDashboardComponent;
 use \App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\DetailsComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function () {
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
 });
+
+Route::get('/product/{slug}',DetailsComponent::class)->name('product.details');
+
