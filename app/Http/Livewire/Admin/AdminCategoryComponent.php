@@ -9,6 +9,11 @@ use App\Models\category;
 class AdminCategoryComponent extends Component
 {
     use withPagination;
+    public function deleteCategory($id){
+        $category = category::find($id);
+        $category->delete();
+        session()->flash('message','category deleted');
+    }
     public function render()
     {
         $categories= Category::paginate(5);
