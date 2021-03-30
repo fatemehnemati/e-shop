@@ -74,9 +74,9 @@
                                 <label class="col-md-4 control-label" >sale_price</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control input-md" wire:model="sale_price">
-                                    @error('sale_price')
+                                    {{-- @error('sale_price')
                                     <p class="text-danger">{{ $message }}</p>
-                                @enderror
+                                @enderror --}}
                                 </div>
                             </div>
 
