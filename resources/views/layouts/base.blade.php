@@ -91,6 +91,9 @@
 												</li>
 												<li class="menu-item" >
                                                     <a title="manage-home-categories" href="{{ route('admin.homecategories') }}">manage home categories</a>
+												</li>
+												<li class="menu-item" >
+                                                    <a title="sale_setting" href="{{ route('admin.sale') }}">sale settings</a>
                                                 </li>
                                                 <li class="menu-item" >
                                                     <a title="Dashboard" href="{{ Route('admin.dashboard') }}" onclick="event.preventDefault() ;  document.getElementById('logout-form').submit();">logout</a>
