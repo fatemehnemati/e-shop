@@ -70,9 +70,9 @@
                         </div>
                         <div class="wrap-butons">
                             @if($product->sale_price > 0  && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
-                            <a href="#" class="btn add-to-cart" wire:click.prevent="store('{{ $product->id }}' , '{{ $product->name }}' , '{{ $product->sale_price}}')">Add to Cart</a>
+                            <a href="#" class="btn add-to-cart" wire:click.prevent="store('{{ $product->id }}','{{ $product->name }}','{{ $product->sale_price}}')">Add to Cart</a>
                         @else
-                            <a href="#" class="btn add-to-cart" wire:click.prevent="store('{{ $product->id }}' , '{{ $product->name }}' , '{{ $product->regular_price}}')">Add to Cart</a>
+                            <a href="#" class="btn add-to-cart" wire:click.prevent="store('{{ $product->id }}','{{ $product->name }}','{{ $product->regular_price}}')">Add to Cart</a>
                         @endif
                  
                             <div class="wrap-btn">

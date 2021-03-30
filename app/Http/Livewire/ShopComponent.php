@@ -24,11 +24,15 @@ class ShopComponent extends Component
     }
 
     public function store($produc_id,$product_name,$product_price){
-        Cart::add($produc_id,$product_name,1,$product_price)->associate('App\Models\product');
+        Cart::instance('cart')->add($produc_id,$product_name,1,$product_price)->associate('App\Models\product');
         session()->flash('success_message','Item added in cart');
         return redirect()->route('product.cart');
     }
-
+    public function addToWishList($produc_id,$product_name,$product_price){
+        Cart::instance('wishlist')->add($produc_id,$product_name,1,$product_price)->associate('App\Models\product');
+        session()->flash('success_message','Item added in cart');
+        
+    }
     public function render()
     {
         if($this->sorting == "date"){
