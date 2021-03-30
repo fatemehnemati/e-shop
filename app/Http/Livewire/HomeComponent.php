@@ -15,6 +15,10 @@ class HomeComponent extends Component
     {
         $sliders = HomeSlider::where('status', 1)->get();
         $Lproducts = product::orderBy('created_at','DESC')->get()->take(8);
-        return view('livewire.home-component',['sliders'=>$sliders,'Lproducts'=>$Lproducts])->layout('layouts.base');
+        $category = HomeCategory::find(1);
+        $cats = explode(',',$category->sel_categories);
+        $categories = category::whereIn('id',$cats)->get();
+        $no_of_products = $category->no_of_products;
+        return view('livewire.home-component',['sliders'=>$sliders,'Lproducts'=>$Lproducts,'categories'=>$categories,'no_of_products'=>$no_of_products])->layout('layouts.base');
     }
 }
