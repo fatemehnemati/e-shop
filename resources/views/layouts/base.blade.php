@@ -483,5 +483,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js" integrity="sha512-EnXkkBUGl2gBm/EIZEgwWpQNavsnBbeMtjklwAa7jLj60mJk932aqzXFmdPKCG6ge/i8iOCK0Uwl1Qp+S0zowg==" crossorigin="anonymous"></script>
     <script src="https://cdn.tiny.cloud/1/f0x7k9y3kf1b6hyg6phikvdtfjf55vmhvccgapv1ubxeked8/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     @livewireScripts
+
+@stack('scripts')
 </body>
 </html>

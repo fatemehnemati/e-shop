@@ -34,7 +34,7 @@
                         <h2 class="product-name">{{ $product->name }}</h2>
                         <div class="short-desc">
                             <ul>
-                                <li>{{ $product->short_description }}</li>
+                                <li>{!! $product->short_description !!}</li>
                             </ul>
                         </div>
                         <div class="wrap-social">
@@ -69,7 +69,7 @@
                         </div>
                         <div class="tab-contents">
                             <div class="tab-content-item active" id="description">
-                                <p>{{ $product->description }}</p>
+                                <p>{!! $product->description !!}</p>
                             </div>
                             <div class="tab-content-item " id="add_infomation">
                                 <table class="shop_attributes">
