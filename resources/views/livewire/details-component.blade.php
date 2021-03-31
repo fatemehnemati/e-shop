@@ -74,10 +74,19 @@
                         @else
                             <a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }},'{{ $product->name }}','{{ $product->regular_price}}')">Add to Cart</a>
                         @endif
-                 
+                        <a href="#" class="btn btn-compare">Add Compare</a>
+                        <a href="#" class="btn btn-wishlist">Add wiishlist</a>
+                        {{-- @php
+                        $witems=Cart::instance('wishlist')->content()->pluck('id');
+                         @endphp
                             <div class="wrap-btn">
+
                                 <a href="#" class="btn btn-compare">Add Compare</a>
-                                <a href="#" class="btn btn-wishlist">Add Wishlist</a>
+                                @if ($witems->contains($product->id))
+                                <a href="#" class="btn btn-wishlist fill-heart" wire:click.prevent="removeFromWishlist('{{ $product->id }}')">remove from Wishlist</a>
+                                @else
+                                <a href="#" class="btn btn-wishlist fill-heart" wire:click.prevent="addToWishList('{{ $product->id }}','{{ $product->name }}','{{ $product->regular_price }}')">add to Wishlist</a>
+                            @endif --}}
                             </div>
                         </div>
                     </div>
