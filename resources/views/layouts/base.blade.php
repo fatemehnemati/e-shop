@@ -116,6 +116,9 @@
                                             <ul class="submenu curency" >
                                                 <li class="menu-item" >
                                                     <a title="Dashboard" href="{{ Route('user.dashboard') }}">Dashboard</a>
+												</li>
+												<li class="menu-item" >
+                                                    <a title="orders" href="{{ Route('user.orders') }}">orders</a>
                                                 </li>
                                                 <li class="menu-item" >
                                                     <a title="Dashboard" href="{{ Route('user.dashboard') }}" onclick="event.preventDefault() ;  document.getElementById('logout-form').submit();">logout</a>
