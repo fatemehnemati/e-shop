@@ -48,7 +48,7 @@ Route::get('/shop',ShopComponent::class);
 
 Route::get('/cart',CartComponent::class)->name('product.cart');
 
-Route::get('/checkout',CheckoutComponent::class);
+Route::get('/checkout',CheckoutComponent::class)->name('checkout');
 
 // for normal user
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
