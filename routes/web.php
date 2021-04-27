@@ -25,6 +25,7 @@ use App\Http\Livewire\wishlistComponent;
 use \App\Http\Livewire\Admin\AdminCouponsComponent;
 use \App\Http\Livewire\Admin\AdminAddCouponsComponent;
 use \App\Http\Livewire\Admin\AdminEditCouponsComponent;
+use App\Http\Livewire\ThankyouComponent;
 
 
 /*
@@ -90,4 +91,5 @@ Route::get('/search',SearchComponent::class)->name('product.search');
 
 Route::get('/wishlist',wishlistComponent::class)->name('product.wishlist');
 
+Route::get('/thankyou',ThankyouComponent::class)->name('thankyou');
 

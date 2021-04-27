@@ -113,6 +113,10 @@ class CartComponent extends Component
                 'total'=>Cart::instance('cart')->total()
             ]);
         }
+        if(!Cart::instance('cart')->count() > 0){
+            Session()->forget('checkout');
+            return;
+        }
     }
     public function render()
     {
