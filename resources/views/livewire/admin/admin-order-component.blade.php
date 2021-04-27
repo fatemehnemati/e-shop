@@ -28,6 +28,7 @@
                                 <th>zip_code</th>
                                 <th>status</th>
                                 <th>order date</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,9 +43,12 @@
                                 <td>{{ $order->lastName }}</td>
                                 <td>{{ $order->mobile }}</td>
                                 <td>{{ $order->email }}</td>
-                                <td>{{ $order->zipeCode }}</td>
+                                <td>{{ $order->zipCode }}</td>
                                 <td>{{ $order->status }}</td>
                                 <td>{{ $order->created_at }}</td>
+                                <td>
+                                    <a href="{{ route('admin.orderdetails',['order_id' => $order->id])}}" class="btn btn-danger">details</a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
