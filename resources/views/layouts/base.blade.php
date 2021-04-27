@@ -97,6 +97,9 @@
 												</li>
 												<li class="menu-item" >
                                                     <a title="all_coupons" href="{{ route('admin.coupons') }}">All Coupons</a>
+												</li>
+												<li class="menu-item" >
+                                                    <a title="all_orders" href="{{ route('admin.orders') }}">All orders</a>
                                                 </li>
                                                 <li class="menu-item" >
                                                     <a title="Dashboard" href="{{ Route('admin.dashboard') }}" onclick="event.preventDefault() ;  document.getElementById('logout-form').submit();">logout</a>
