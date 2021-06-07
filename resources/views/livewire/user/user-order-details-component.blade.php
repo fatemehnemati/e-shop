@@ -1,7 +1,42 @@
 <div class="container" style="padding:30px 0">
     <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel_default">
+                <div class="panel_heading">
+                    
+                    <div class="col-md-6">
+                        orders details
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{{ route('user.orders')}}" class="btn btn-danger pull-right">Add orders</a>
 
-
+                        @if ($order->status == "ordered")
+                        <a href="#" class="btn btn-danger" wire:click.prevent="cancelOrder">cancelOrder</a>
+                            
+                        @endif
+                    </div>
+                </div>
+                <div class="panel_body">
+                    <table class="table">
+                        <th>order id</th>
+                        <td>{{ $order->id }}</td>
+                        <th>order date</th>
+                        <td>{{ $order->created_at }}</td>
+                        <th>order status</th>
+                        <td>{{ $order->status }}</td>
+                        @if($order->status == "delivered")
+                        <th>delivering details</th>
+                        <td>{{ $order->delivered_date }}</td>
+                        @elseif ($order->status == "canceled")
+                        <th>canceling details</th>
+                        <td>{{ $order->canceled }}</td>
+                        @endif
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
             <div class="panel panel_default">
                 <div class="panel_heading">
@@ -9,9 +44,9 @@
                         <div class="col-md-6">
                             order items
                         </div>
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <a href="{{ route('user.orders')}}" class="btn btn-danger pull-right">Add orders</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="panel-body">
@@ -31,7 +66,10 @@
                                     <h5>{{ $item->quantity }}</h5>
                                 </div>
                                 <div class="price-field sub-total"><p class="price">${{ $item->price * $item->quantity }}</p></div>
-                                
+                                <div class="price-field produtc-price"><p class="price"><a href="{{ route('user.review',['order_item_id'=>$item->id]) }}">write review</a></p></div>
+                                {{-- @if($order->status == "delivered" && $item->rstatus == false)
+                                <div class="price-field produtc-price"><p class="price"><a href="#">write review</a></p></div>
+                                @endif --}}
                             </li>
                             @endforeach                            
                         </ul>

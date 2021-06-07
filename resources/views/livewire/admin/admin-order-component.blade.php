@@ -13,6 +13,11 @@
                     </div>
                 </div>
                 <div class="panel-body">
+                    @if (session('message'))
+                    <div class="alert alert-danger">
+                        {{ session('message') }}
+                    </div>
+                @endif
                     <table class="table table_striped">
                         <thead>
                             <tr>
@@ -28,7 +33,7 @@
                                 <th>zip_code</th>
                                 <th>status</th>
                                 <th>order date</th>
-                                <th>Action</th>
+                                <th colspan="2" class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,6 +53,17 @@
                                 <td>{{ $order->created_at }}</td>
                                 <td>
                                     <a href="{{ route('admin.orderdetails',['order_id' => $order->id])}}" class="btn btn-danger">details</a>
+                                </td>
+                                <td>
+                                    <div class="drowpdown">
+                                        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                                status <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" wire:click.prevent="updateOrderStatus({{ $order->id }},'delivered')">delivered</a></li>
+                                            <li><a href="#" wire:click.prevent="updateOrderStatus({{ $order->id }},'delivered')">enabled</a></li>
+                                        </ul>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach
